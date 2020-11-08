@@ -155,6 +155,7 @@ public class Problem2Test {
                 assertEquals(caseId, input[j], list.val);
                 list = list.next;
             }
+            //System.out.println(list.val);
             assertNull(caseId, list);
 
             assertNotNull(halfList);
