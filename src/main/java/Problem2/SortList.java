@@ -41,26 +41,17 @@ public class SortList {
     }
 
     public static ListNode mergeLists(ListNode list1, ListNode list2) {
-
-        ListNode current = new ListNode();
-        ListNode tempHead = current;
-
-        while(list1 != null && list2 != null) {
-            if(list1.val < list2.val) {
-                current.next = list1;
-                list1 = list1.next;
-            } else {
-                current.next = list2;
-                list2 = list2.next;
-            }
-            current = current.next;
-        }
-        if(list1 != null) {
-            current.next = list1;
+        if (list1 == null) {
+            return list2;
+        } else if (list2 == null) {
+            return list1;
+        } else if (list1.val < list2.val) {
+            list1.next = mergeLists(list1.next, list2);
+            return list1;
         } else {
-            current.next = list2;
+            list2.next = mergeLists(list1, list2.next);
+            return list2;
         }
-
-        return tempHead.next;
     }
+
 }
