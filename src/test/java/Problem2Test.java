@@ -128,13 +128,12 @@ public class Problem2Test {
     }
 
     @Test
-    public void testFindMidAndBreak() {
+    public void testfindMidAndBreak() {
         int[][] inputs = {
                 {1},
                 {4, 5},
+                {1, 2, 1},
                 {1, 2, 3, 1},
-                {1, 2, 3, 1, 2, 2},
-                {1, 2, 3, 1, 1, 7},
                 {1, 2, 3, 4, 5},
         };
         for (int i = 0; i < inputs.length; i++) {
@@ -156,6 +155,7 @@ public class Problem2Test {
                 assertEquals(caseId, input[j], list.val);
                 list = list.next;
             }
+            //System.out.println(list.val);
             assertNull(caseId, list);
 
             assertNotNull(halfList);
