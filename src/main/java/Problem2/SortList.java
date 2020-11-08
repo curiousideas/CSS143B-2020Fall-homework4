@@ -17,12 +17,56 @@ public class SortList {
     }
 
     public static ListNode findMidAndBreak(ListNode head) {
-        // homework
-        return null;
+
+        int count = 1;
+        if (head == null) {
+            return null;
+        }
+        ListNode cur = head.next;
+        ListNode prev = head;
+
+        while(cur != null) {
+            cur = cur.next;
+            count++;
+            if(cur == null) {
+                break;
+            }
+            cur = cur.next;
+            count++;
+            prev = prev.next;
+        }
+        // System.out.println(count);
+        if (count % 2 != 0) {
+            return null;
+        } else {
+           // System.out.println(count);
+        }
+        ListNode ret = prev.next;
+        prev.next = null;
+        return ret;
     }
 
     public static ListNode mergeLists(ListNode list1, ListNode list2) {
-        // homework
-        return null;
+
+        ListNode current = new ListNode(0);
+        ListNode tempHead = current;
+
+        while(list1 != null && list2 != null) {
+            if(list1.val < list2.val) {
+                current.next = list1;
+                list1 = list1.next;
+            } else {
+                current.next = list2;
+                list2 = list2.next;
+            }
+            current = current.next;
+        }
+        if(list1 != null) {
+            current.next = list1;
+        } else {
+            current.next = list2;
+        }
+
+        return tempHead.next;
     }
 }

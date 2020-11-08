@@ -128,11 +128,10 @@ public class Problem2Test {
     }
 
     @Test
-    public void testfindMidAndBreak() {
+    public void testFindMidAndBreak() {
         int[][] inputs = {
                 {1},
                 {4, 5},
-                {1, 2, 1},
                 {1, 2, 3, 1},
                 {1, 2, 3, 4, 5},
         };

@@ -8,19 +8,19 @@ public class BinarySearch {
         return binaryHelper(data, target, 0, data.length - 1);
     }
 
-    public static int binaryHelper(int[] array, int search, int start, int end) {
+    private static int binaryHelper(int[] data, int target, int start, int end) {
         int middle = (end + start) / 2;
 
         if(end < start) {
             return -1;
         }
 
-        if (search == array[middle]) {
+        if (target == data[middle]) {
             return middle;
-        } else if(search < array[middle]) {
-            return binaryHelper(array, search, start, middle - 1);
+        } else if(target < data[middle]) {
+            return binaryHelper(data, target, start, middle - 1);
         } else {
-            return binaryHelper(array, search, middle + 1, end);
+            return binaryHelper(data, target, middle + 1, end);
         }
     }
 }
