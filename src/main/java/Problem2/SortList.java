@@ -17,7 +17,6 @@ public class SortList {
     }
 
     public static ListNode findMidAndBreak(ListNode head) {
-
         int count = 1;
         if (head == null) {
             return null;
@@ -35,14 +34,12 @@ public class SortList {
             count++;
             prev = prev.next;
         }
-        // System.out.println(count);
-        if (count % 2 != 0) {
-            return null;
-        } else {
-           // System.out.println(count);
-        }
+
         ListNode ret = prev.next;
         prev.next = null;
+        if (count % 2 == 1) {
+            return null;
+        }
         return ret;
     }
 
